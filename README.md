@@ -1,5 +1,6 @@
-daily practice commit
+daily practice commit!
+<br>
 
-web > HTML5, CSS, JavaScript, BootStrap, JSP
-language > JAVA, PYTHON
-or ~ algorithm practicing
+web > HTML5, CSS, JavaScript, BootStrap, JSP <br>
+language > JAVA, PYTHON <br>
+or ~ algorithm practicing 
