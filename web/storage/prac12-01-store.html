@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름과 학번 입력</title>
+    <script>
+        function store() {
+            if(!window.sessionStorage) { alert("지원하지 않습니다."); return;}
+            var name = document.getElementById("name").value;
+            var sid = document.getElementById("sid").value;
+            sessionStorage.setItem(name, sid);
+            // 버튼을 눌렀을때 id를 이용해 label의 값을 가져와 각각
+            // name과 sid에 저장한다.
+            // setItem (name, sid)로 (키,벨류) 자리에 각각 이름과 학번을 저장한다.
+        }
+    </script>
+</head>
+<body>
+    <h3>이름과 학번 입력</h3><hr>
+    <form>
+        <label>이름 <input id="name" type="text" size="10"></label>
+        <br>
+        <label>학번 <input id="sid" type="text" size="10"></label>
+        <input type="button" value="스토리지에 저장" onclick="store()">
+    </form>
+    <br>
+    <a href="prac12-01-search.html">이름으로 학번 검색 페이지로</a>
+</body>
+</html>

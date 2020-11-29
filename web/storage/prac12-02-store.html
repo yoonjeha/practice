@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세션 스토리지에 쓰기</title>
+</head>
+<body>
+    <h3>세션 스토리지에 구입 리스트 저장</h3><hr>
+    품목명 : <input id="item" type="text" size="10">
+    갯수 : <input id="count" type="text" size="10">
+    <button id="save" onclick="store()">저장</button>
+    <br>
+    <a href="prac12-02-search.html">검색 페이지로</a>
+
+    <!-- 세션 스토리지는
+    각각의 URL에 대해 독립적인 저장 공간을 
+    페이지 세션이 유지되는 동안(브라우저가 열려있는 동안) 제공합니다.
+    1. 세션에 한정해, 즉 브라우저 또는 탭이 닫힐 때까지만 데이터를 저장합니다.
+    2. 데이터를 절대 서버로 전송하지 않습니다.
+    3. 저장 공간이 쿠키보다 큽니다. (최대 5MB)
+    4. 페이지 세션은 브라우저가 열려있는 한 새로고침과 페이지 복구를 거쳐도 남아있습니다.
+    5. 페이지를 새로운 탭이나 창에서 열면, 세션 쿠키의 동작과는 다르게 
+    최상위 브라우징 맥락의 값을 가진 새로운 세션을 생성합니다.
+    
+    따라서 해당 탭(창) 안에서 저장과 검색이 이루어져야 하므로 a 태그를 이용하여 같은 탭(창) 안에서
+    세션 스토리지를 유지시키며 검색/저장을 이루어야함 
+    (쇼핑몰 비회원 로그인 시와 같은 경우
+    장바구니에 넣은 물건들이 창을 닫으면 지워지는 경우가 종종 있는데
+    이 경우가 세션 스토리지를 활용한 사레로 보임)
+​ -->
+
+    <script>
+        var item = document.getElementById("item");
+        var count = document.getElementById("count");
+
+        function store() {
+            if (!window.sessionStorage) {
+                alert("세션 스토리지를 지원하지 않습니다.");
+                return;
+            }
+            sessionStorage.setItem(item.value, count.value);
+        }
+    </script>
+</body>
+</html>
