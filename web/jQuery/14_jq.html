@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#out").click(function() {
+                $("img").fadeOut("slow");
+            });
+            $("#in").click(function() {
+                $("img").fadeIn("slow");
+            });
+            $("#toggle").click(function() {
+                $("img").fadeToggle("slow");
+            });
+            $("#to50").click(function() {
+                $("img").fadeTo("slow", 0.5);
+            });
+            $("#to10").click(function() {
+                $("img").fadeTo("slow", 0.1);
+            });
+            $("#to100").click(function() {
+                $("img").fadeTo("slow", 1.0);
+            });
+            // fadeto : 지정한 투명도로 서서히 바꿔줍니다.
+        });
+    </script>
+</head>
+<body>
+    <button id="out">fadeOut</button>
+    <button id="in">fadeIn</button>
+    <button id="toggle">fadeToggle</button>
+    <button id="to50">opacity 50%</button>
+    <button id="to10">opacity 90%</button>
+    <button id="to100">opacity 0%</button>
+    <p></p>
+    <img name="pic1" src="pic1.jpg"/>
+</body>
+</html>

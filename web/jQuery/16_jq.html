@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#slide").click(function() {
+                $("#panel").css("color","red")
+                .slideDown(2000)
+                .slideUp(6000)
+                .fadeTo("slow",0.3);
+            });
+        });
+    </script>
+    <style>
+        #slide, #panel {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+        #panel {
+            padding: 50px;
+            display: none;
+            background-color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="slide">[오늘의 공지사항]</div>
+    <div id="panel">오늘은 jQuery 프로그램을 학습니다.
+        <br>예제를 작성한 후 실행해보세요.
+    </div>
+</body>
+</html>

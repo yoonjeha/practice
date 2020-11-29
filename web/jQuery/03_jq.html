@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("ans").hide();
+            // ans는 임의의 태그로 사용자가 원하는 태그명을 사용해도
+            // 작동한다. (여기서는 answer의 ans 가 사용됨)
+            $("p.q1").click(function() {
+                $("ans.q1").show();
+            });
+            $("ans.q1").click(function() {
+                $(this).hide();
+            });
+            $("p.q2").click(function() {
+                $("ans.q2").show();
+            });
+            $("ans.q2").click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>질문1 : 대한민국의 수도는 어디입니까?</h2>
+    <p class="q1">[정답 보기]</p>
+    <ans class="q1">대한민국의 수도는 <strong>서울</strong>입니다.</ans>
+    <h2>질문2 : 대한민국의 국보 1호는 무엇입니까?</h2>
+    <p class="q2">[정답 보기]</p>
+    <ans class="q2">대한민국의 국보 1호는 <strong>숭례문</strong>입니다.</ans>
+</body>
+</html>
