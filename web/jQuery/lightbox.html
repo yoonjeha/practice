@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LightBox</title>
+    <link rel="stylesheet" href="jquery.lightbox-0.5.css" />
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="jquery.lightbox-0.5.js"></script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function() {
+            $('a.light').lightBox();
+        });
+    </script>
+</head>
+<body>
+    <a class="light" href="../media/image1.jpg">LightBox</a>
+    <a class="light" href="../media/image2.jpg">LightBox</a>
+    <a class="light" href="../media/image3.jpg">LightBox</a>
+</body>
+</html>
+
+<!-- 
+    플러그인
+    Masonry 플러그인
+    타일형 웹 페이지 만들 때 사용
+    1. Masonry 플러그인 웹 사이트(http://masonry.desandro.com/)에서
+    플러그인 다운로드
+    2. HTML 페이지와 같은 폴더에 넣어 폴더를 구성
+    <script src="http://masonry.desandro.com//masonry.pkgd.min.js"></script>
+ -->

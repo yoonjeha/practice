@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery DOM</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function () {
+            // 10회 반복합니다.
+            for (var i =0; i<10; i++) {
+                // 문서 객체를 생성합니다.
+            // $변수명 : jQuery 변수 선언    
+            var $dynamic = $('<h1>Create Document Object + ' + i +
+                '</h1>').css({
+                    backgroundColor : 'black',
+                    color : 'red'
+                    // 검은 배경에 빨간 글씨 css(스타일효과 적용한)
+                    // h1크기의 문서객체 생성
+                });
+
+                // 문서 객체를 추가합니다.
+                $('body').append($dynamic);
+            }
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+<!-- 무한 스크롤
+스크롤을 맨 아래쪽까지 내려도 무한 스크롤을 활용해 정보를 계속 제공
+
+무한 스크롤 생성 개요
+1. 스크롤 이벤트가 발생
+2. 전체 문서의 높이가 스크롤 높이와 웹 브라우저 창의 높이를 더한 값과
+    같은지 조건 확인
+3. 이 조건을 충족할 때만 데이터를 추가
+-->

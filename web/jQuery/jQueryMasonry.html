@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonry</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        .box {
+            background: black;
+            margin: 5px;
+            /* 박스의 스타일값 검정 배경에 5px margin
+            margin : 바깥쪽여백 */
+        }
+    </style>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
+    <script>
+        // 이벤트를 연결합니다.
+        $(document).ready(function() {
+            // 문서 객체를 생성합니다.
+            for (var i=0; i<100; i++) {
+                $('<div></div>').addClass('box').css({
+                    width :100, //너비는 100고정
+                    height: Math.floor(Math.random() *100)+50
+                    // Math.random()은 0.0과 같거나 크고 1.0보다 작은 값을 출력하므로
+                    // 100을 곱하여 0부터 99까지의 랜덤한 숫자를 뽑음
+                    // (+50은 최소한의 높이를 50을 주는 것임 random에서 0이 나오면
+                    // 높이가 0이 되니까)
+                    // ++ Math.floor가 1부터 시작할 수 있게 만들어줌
+
+                    // 세로 랜덤함수로 0~99 + 50을 floor하면 51~150까지 세로가 랜덤 지정이 됨
+                    // 이것을 <div></div>로 만들고 body에 추가한다.
+                    // Math.floor은 Math.Random이 처음에 0인데 1로 시작하게 해주는 것이다.
+                    // 하나 안에 여러 개 넣어도 된다.
+                }).appendTo('body');
+                // .appendTo()
+                // $(A).appendTo(B) // A 가 B 사이의 마지막에 추가 된다.
+                // 본문을 해석하자면 '$(<div></div>).addClass('box')..후략
+                // 이 body 사이의 마지막에 추가된다.
+            }
+
+            // Masonry 플러그인을 적용합니다.
+            $('body').masonry({
+                columnWidth: 110
+                // 반응형 벽돌 스타일 레이아웃(masonry)
+                // 너비를 110을 주어 100width의 box에 10의 여백(간격)을
+                // 줄 수 있게 함
+            });
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

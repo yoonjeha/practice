@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Animation</title>
+    <script>
+        window.onload = function() {
+            // 변수를 선언합니다.
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = [
+                '0.png', '1.png', '2.png', '3.png', '4.png',
+                '5.png', '6.png', '7.png', '8.png', '9.png',
+                '10.png', '11.png', '12.png', '13.png', '14.png' 
+            ];
+            // 타이머 반복을 시작합니다.
+            setInterval(function() {
+                image.src = "../media/" + frames[count % frames.length];
+                count ++;
+                // count = count + 1; 은
+                // count ++; 과 동일함 (count=count++; 하면 오류가 난다...)
+            }, 1000 / 20);
+        };
+    </script>
+</head>
+<body>
+    <img id="image" />
+</body>
+</html>
+
+<!-- 
+- setInterval 함수 : 일정한 시간 간격으로 작업을 수행하기 위해서 사용합니다.
+clearInterval(식별번호) 함수를 사용하여 중지할 수 있습니다. 
+주의할 점은 일정한 시간 간격으로 실행되는 작업이 
+그 시간 간격보다 오래걸릴 경우 문제가 발생할 수 있습니다.
+
+- setTimeout 함수 : 일정한 시간 후에 작업을 한번 실행합니다. 
+보통 재귀적 호출을 사용하여 작업을 반복합니다. 
+기본적으로 setInterval 과는 달리 지정된 시간을 기다린후 작업을 수행하고, 
+다시 일정한 시간을 기다린후 작업을 수행하는 방식입니다. 
+지정된 시간 사이에 작업 시간이 추가 되는 것입니다. 
+clearTimeout(식별번호) 을 사용해서 작업을 중지합니다.
+
+- clearInterval(), clearTimeout()이 실행중인 작업을 중지시키는 것은 아닙니다. 
+지정된 작업은 모두 실행되고 다음 작업 스케쥴이 중지 되는 것입니다.
+-->
