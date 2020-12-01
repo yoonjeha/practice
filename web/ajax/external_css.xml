@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="dept.css"?>
+<deptinfo>
+    <department dno="001">
+        <name>컴퓨터학과</name>
+        <professor>박인우</professor>
+        <student sno="001">
+            <sname>홍길동</sname>
+            <age>25세</age>
+        </student>
+    </department>
+    <department dno="002">
+        <name>철학과</name>
+        <professor>박현우</professor>
+        <student sno="021">
+            <sname>홍리라</sname>
+            <age>21세</age>
+        </student>
+        <student sno="022">
+            <sname>김미선</sname>
+            <age>22세</age>
+        </student>
+    </department>
+</deptinfo>
+
+<!-- 제이쿼리는 웹 브라우저 종류에 상관없이 같은 방식으로 Ajax 기능을
+구현하도록 다양한 메소드를 제공
+제이쿼리 모바일은 페이지 이동을 위해 Ajax 기술을 사용
+Ajax(Asynchronous JavaScript and XML)
+서버에 비동기 HTTP 통신을 하기 위한 기술
+서버에 HTTP 요청을 보낸 뒤 XML, JSON 형식 등으로 응답을 받아 페이지의 일부만을
+변경 매번 HTML5 페이지 전체를 새로 고침하지 않고도 웹 페이지 내용을 새롭게 갱신 가능
+-> 페이지 이동 없이 웹 서버와 데이터를 주고 받는 사용자 상호 작용의 새 패러다임 제공
+빠르고 동적인 웹 페이지 생성을 위한 핵심 기술로 브라우저나 플랫폼에 독립적임
+
+Ajax메소드
+$.ajax()
+모든 Ajax 메소드의 기본이 되는 메소드
+예) $.ajax({
+        url: 'service.php',
+        success: function(data) {
+            $('#area'.html(data);
+            }
+        });
+$.get()
+GET 방식의 ajax()메소드
+예) $.get('sample.html', function(data) {
+        $('#area').html(data);
+    });
+$.getJSON()
+JSON 형식으로 응답 받는 ajax() 메소드
+예) $.getJSON('sample.json', function(data) {
+        $('#area').html('<p>' + data.age + '</p>');
+    });
+
+$.ajax() 메소드
+모든 Ajax 메소드가 내부적으로는 사용하는 기본 메소드
+Ajax 요청을 기본적인 부분부터 직접 설정하고 제어할 수 있어 다른 Ajax 메소드로
+할 수 없는 요청도 수행 가능
+
+$.ajax() 메소드의 기본 형식
+$.ajax({ url: URL주소 [, type: 요청방식] [, data: 요청내용]
+[, timeout: 응답제한시간] [,dataType: 응답데이터유형] [, async: 비동기여부]
+[, success: 성공콜백함수] [, error: 실패콜백함수] });
+선택항목 : 항목값
+
+ajax() 메소드 선택 항목들(options)을 맵 형식으로 명세
+$.ajax( options );
+url : URL 주소
+요청이 보내질(주로 서버)의 URL 주소(필수 항목, 기본값 : 현재페이지)
+예) "sample.php", "sample.html", "sample.xml"
+type : 요청방식
+요청을 위해 사용할 HTTP 메소드
+에) "get"(기본값), "post"
+data : 요청내용
+서버로 전달되는 요청 내용(제이쿼리 객체맵이나 문자열)
+timeout : 응답제한 시간
+요청 응답 제한 시간(밀리초)
+예) 20000
+dataType : 응답 데이터 유형
+(서버로부터의) 반환될 응답 데이터의 형식
+예) "xml", "html", "json", "jsonp", "script", "text"
+Async : 논리값
+요청이 비동기식으로 처리되는지 여부(기본값 : true)
+success : function(data)
+요청 성공 콜백함수(data : 서버 반환 값)
+error : function()
+요청 실패 콜백함수
+
+$.load() 메소드
+서버로부터 데이터를 받아오는 가장 간단한 메소드로 많이 이용
+서버로부터 데이터를 받아 메소드를 실행하는 대상 엘리먼트에 직접 추가
+복잡한 선택 사항을 설정하지 않고도 빠르고 간단하게 웹 페이지의 동적 갱신이 가능
+요청이 성공하면 메소드가 실행되는 대상 엘리먼트 내용이
+서버에서 응답 받은 HTML5 마크업 데이터로 대체
+
+$.load( url [, data] [, function(data)] );
+$.load() 메소드 선택 항목
+function(data)
+요청 성공 콜백 함수(data : 서버 반환 값)
+data
+서버로 전달되는 요청 내용(제이쿼리 객체맵이나 문자열)
+url
+요청이 보내질(주로 서버)의 URL 주소(필수 항목, 기본값: 현재페이지)
+예) "sample.html"
+$(document).ready(function() {
+    $('#btnLoad3').click( function() {
+        $('#listArea').empty(); // 리스트뷰를 비움
+        $('#listArea').load('ajax-season.html li', function(htmlData) {
+            $('#listArea').listview('refresh'); // 리스트뷰를 새로 고침
+        });
+    });
+});
+
+ -->
