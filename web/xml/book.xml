@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<booklist>
+    <book>
+        <kind>인문</kind>
+        <title>어른의 맞춤법</title>
+        <author>신선해, 정지영</author>
+        <publisher>앤의 서재</publisher>
+        <price>14000원</price>
+    </book>
+    <book>
+        <kind>자기계발</kind>
+        <title>완벽주의자를 위한 행복 수업</title>
+        <author>탈 벤 샤하르</author>
+        <publisher>슬로디미디어</publisher>
+        <price>15000원</price>
+    </book>
+    <book>
+        <kind>미술</kind>
+        <title>그림을 보는 기술: 명화의 구조를 읽는 법</title>
+        <author>아키타 마사코(옮긴이:이연식)</author>
+        <publisher>까치</publisher>
+        <price>16800원</price>
+    </book>
+    <book>
+        <kind>컴퓨터/IT</kind>
+        <title>프로그래머를 위한 파이썬</title>
+        <author>데인 힐라드(옮긴이:황반석)</author>
+        <publisher>제이펍</publisher>
+        <price>25000원</price>
+    </book>
+</booklist>
+
+<!-- 큰틀 없이 book만 열고 닫으면 에러가 발생하여
+큰틀(booklist)를 만들어주어 그 안에 book을 여러개 넣었음
+(이전에 했던 xml참고) -->
