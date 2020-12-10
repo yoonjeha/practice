@@ -5,14 +5,14 @@
 <title>로그인창</title>
 </head>
 <body>
-	<form name="frmLogin" method="post" action="loginTest2" encType="UTF-8">
-		아이디 : <input type="text" name="user_id"><br>
-		비밀번호 : <input type="password" name="user_pw"><br>
-		<input type="submit" value="로그인">
-		<input type="reset" value="다시입력">
+	<form name ="frmLogin" method = "post" action="SessionTest4" encType="UTF-8">
+	아이디 : <input type="text" name="user_id"><br>
+	비밀번호 : <input type="password" name="user_pw"><br>
+	<input type="submit" value="로그인">
+	<input type="reset" value="다시입력">
+	<input type="hidden" name="user_address" value="서울시 관악구" />
+	<input type="hidden" name="user_email" value="jiyoon@email.com" />
+	<input type="hidden" name="user_hp" value="010-0000-1111" />
 	</form>
 </body>
 </html>
-
-<!-- 입력한 내용을 취소하고자 할 때에는 취소(reset) 버튼이 사용됩니다.
-취소 버튼을 누르면 데이터를 다시 입력할 수 있도록 이전에 입력한 내용을 깨끗이 지웁니다. -->
