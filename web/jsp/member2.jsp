@@ -1,70 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"
-    import="java.util.*"
-    import="prac1215.*" %>
- <%
-     request.setCharacterEncoding("UTF-8");
- %>
- <%
-     String id = request.getParameter("id");
-     String pwd = request.getParameter("pwd");
-     String name = request.getParameter("name");
-     String email = request.getParameter("email");
-
-     MemberBean2 m = new MemberBean2(id, pwd, name, email);
-     MemberDAO8 memberDAO = new MemberDAO8();
-     memberDAO.addMember(m);
-     //È¸¿øÁ¤º¸¸¦ Å×ÀÌºí¿¡ Ãß°¡ÇÕ´Ï´Ù.
-     List membersList = memberDAO.listMembers();
-    //ÀüÃ¼ È¸¿øÁ¤º¸¸¦ Á¶È¸ÇÕ´Ï´Ù. 
-     %>
- 
- 
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" 
+    isELIgnored="false"  %>
+<%
+   request.setCharacterEncoding("UTF-8");
+%>   
 <html>
 <head>
-<meta charset="UTF-8">
-<title>È¸¿ø ¸ñ·ÏÃ¢</title>
+<meta charset=â€UTF-8">
+<title>íšŒì› ì •ë³´ ì¶œë ¥ì°½</title>
 </head>
 <body>
-  <table width='100%' align='center'>
-      <tr align='center' bgcolor = '#99ccff'>
-        <td width="7%">¾ÆÀÌµğ</td>
-        <td width="7%">ºñ¹Ğ¹øÈ£</td>
-        <td width="5%">ÀÌ¸§</td>
-        <td width="11%">ÀÌ¸ŞÀÏ</td>
-        <td width="5%">°¡ÀÔÀÏ</td>
-  </tr>
-  <%
-      if(membersList.size()==0){
-  %>
-      <tr>
-          <td colspan ="5">
-              <p align = "center"><b><span style="font-szie:9pt;">
-                          µî·ÏµÈ È¸¿øÀÌ ¾ø½À´Ï´Ù.</span></b></p>
-         </td>
-     </tr>
-
-  <%
-      } else{
-          for(int i=0; i<membersList.size();i++){
-              MemberBean2 bean = (MemberBean2) membersList.get(i);
-
-  %>
-      <tr align ="center">
-          <td><%=bean.getId() %></td>
-          <td><%=bean.getPwd() %></td>
-          <td><%=bean.getName() %></td>
-          <td><%=bean.getEmail() %></td>
-          <td><%=bean.getJoinDate() %></td>
-          </tr>
-  <%
-    } //end for
-  }//end if
-  %>
-  <tr height = "1" bgcolor="#99ccff">
-      <td colspan="5"></td>
-      </tr>
-  </table>
+<table border="1"   align="center">
+    <tr align="center" bgcolor="#99ccff">
+       <td width="20%"><b>ì•„ì´ë””</b></td>
+       <td width="20%"><b>ë¹„ë°€ë²ˆí˜¸</b></td>
+       <td width="20%" ><b>ì´ë¦„</b></td>
+       <td width="20%"><b>ì´ë©”ì¼</b></td>
+       <td width="20%" ><b>ì£¼ì†Œ</b></td>
+    </tr>
+<tr align=center>
+       <td>${param.id } </td>
+       <td>${param.pwd} </td>
+       <td>${param.name } </td>
+       <td>${param.email }</td>
+       <td>${requestScope.address}</td>
+   </tr>
+</table>
 </body>
 </html>
